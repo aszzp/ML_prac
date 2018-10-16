@@ -1,2 +1,4 @@
-for i in range(5):
-    print("嘻嘻")
+import sys
+a=0.2
+float(a)
+print(sys.getsizeof(a))

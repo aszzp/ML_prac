@@ -13,7 +13,7 @@ def getinput(a):
 array=[]
 array_num = getinput("请输入元素数量:  ")
 for i in range(array_num):
-    array.append(getinput("请输入第%d个元素:  "%i))
+    array.append(getinput("请输入第%d个元素:  "%(i+1)))
 #排序主体
 for i in range(array_num-1):
     for t in range(array_num-1-i):
