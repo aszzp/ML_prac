@@ -148,4 +148,4 @@ def main():
         return w, v
 
 
-main(2)
+main()
