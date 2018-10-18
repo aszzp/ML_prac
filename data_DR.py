@@ -1,9 +1,13 @@
+import os
 import struct
 import numpy as np
 
 
 def Get_Data_CLass1():
-    f = open(r'C:\Users\zzp\OneDrive\Desktop\课件\机器学习\作业\3第六章练习题\data_class1.txt', 'rb')
+    try:
+        f = open(os.getcwd() + "\data_class1.txt", 'rb')
+    except FileNotFoundError:
+        f = open(input("请输入数据集1绝对地址，如C:\data_class1.txt"), 'rb')
     f.seek(0, 0)
     res = np.zeros([1024, 8])
     for i in range(0, 1024):
@@ -15,9 +19,12 @@ def Get_Data_CLass1():
 
 
 def Get_Data_CLass2():
-    f = open(r'C:\Users\zzp\OneDrive\Desktop\课件\机器学习\作业\3第六章练习题\data_class2.txt', 'rb')
+    try:
+        f = open(os.getcwd() + "\data_class2.txt", 'rb')
+    except FileNotFoundError:
+        f = open(input("请输入数据集2绝对地址，如C:\data_class2.txt"), 'rb')
     f.seek(0, 0)
-    res=np.zeros([1024, 8])
+    res = np.zeros([1024, 8])
     for i in range(0, 1024):
         for j in range(0, 8):
             byte = f.read(4)
@@ -144,7 +151,6 @@ def main():
         print("计算中")
         w, v = cca(res1, res2)
         print("结果已储存在局部变量w,v中，其中w为x的系数向量，v为y的系数向量")
-        print(w, v)
         return w, v
 
 
