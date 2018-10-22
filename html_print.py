@@ -39,7 +39,8 @@ def htmls_to_pdf(htmls, file_name):
         'page-size': 'Letter',
         'encoding': "UTF-8",
         'custom-header': [
-            ('Accept-Encoding', 'gzip')]
+            ('Accept-Encoding', 'gzip')],
+        'outline-depth': 10,
     }
     pdfkit.from_file(htmls, file_name, options=options)
 
@@ -64,9 +65,9 @@ def main():
         url_to_html(url, address_filename)
         htmls.append(address_filename)
         file_count += 1
-        time.sleep(20)
+        time.sleep(15)
     #输入所有html文件的绝对路径，指定输出
     htmls_to_pdf(htmls, r"C:\Users\zzp\Documents\pdf\b.pdf")
 
 
-htmls_to_pdf([r"C:\Users\zzp\Documents\pdf\pdf0.html", r"C:\Users\zzp\Documents\pdf\pdf1.html", r"C:\Users\zzp\Documents\pdf\pdf2.html", r"C:\Users\zzp\Documents\pdf\pdf3.html"], r"C:\Users\zzp\Documents\pdf\a.pdf")
+main()
