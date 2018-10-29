@@ -21,3 +21,4 @@ for i in range(array_num-1):
                 a = array[t]
                 array[t] = array[t+1]
                 array[t+1] = a
+print(array)
